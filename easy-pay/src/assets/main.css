@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+:root{
+  --laranja: #FF8000;
+  --branco: #FFFFFF;
+  --azul: #007BFF;
+  --preto: #000000;
+  --grafite: #1A1A1A;
+  --cinza-claro: #D9D9D9;
+
+  --fonte-padrao: "Inter", sans-serif;
+}
+
+*,*::before,*::after{
+  font-family: var(--fonte-padrao);
+}
+
+body{
+    margin: 0;
+    background-color: #e4e4e4;
+}
