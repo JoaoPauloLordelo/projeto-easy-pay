@@ -1,52 +1,68 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import ItemNv from './ItemNv.vue';
+import  { obterItensNv } from '@/store/listaItemNav'
+import { navegarHome } from '@/routes';
+    const listItens = obterItensNv()
+    const t = ref(true)
 
-    const listNomes = ["Pagamentos","Minha Conta","Cartões","Emprestimos","PIX"]
-    const t = ref(false)
+    function expand(){
+        t.value = false
+    }
 
     function minimize(){
-        t.value = !t.value
+        t.value = true
     }
 
 </script>
 
 
 <template>
-    <nav>
-        <section class="navMenu" :class="{navMenu_mini: t}">
-            <img src="../assets/images/" alt="">
+        <aside class="navMenu" :class="{navMenu_mini: t}" @mouseenter="expand()" @mouseleave="minimize()">
+            <header class="topoMenu">
+                <img src="../assets/images/easy_pay_white_only.png" alt="" class="imagemMenuLogo" @click="navegarHome()">
+            </header>
             
             <ul class="opMenu">
-                <li v-for="aba in listNomes" @click="minimize()">{{ aba }}</li>
+                <li v-for="item in listItens">
+                    <ItemNv :item="item" :t="t"/>
+                </li>
             </ul>
-        </section>
-    </nav>
+        </aside>
 </template>
 
 
 <style scoped>
     .opMenu{
-        height: 100%;
         list-style-type: none;
         padding: 0;
         margin: 0;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
         color: var(--branco);
         font-weight: 600;
+        gap: 20px;
     }
 
     .navMenu{
-        width: 15%;
+        width: 15em;
         height: 100vh;
         background-color: var(--laranja);
         transition: 0.2s;
     }
 
     .navMenu_mini{
-        width: 5%;
+        width: 5em;
     }
 
+    .imagemMenuLogo{
+        width: 100px;
+        cursor: pointer;
+    }
+
+    .topoMenu{
+        display: flex;
+        padding-bottom: 30px;
+    }
 
 </style>
