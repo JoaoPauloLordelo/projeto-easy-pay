@@ -16,7 +16,7 @@ import {navegarConfig} from "../routes/index"
         t.value = true
     }
 
-    const configs = {
+    const configs : IItem = {
         nome : "Configuração",
         imagem : "white_gear.png",
         navegar: navegarConfig
@@ -61,6 +61,8 @@ import {navegarConfig} from "../routes/index"
         background-color: var(--laranja);
         transition: 0.1s;
         padding: 0px 10px;
+        display: flex;
+        flex-direction: column;
     }
 
     .navMenu_mini{
@@ -80,7 +82,8 @@ import {navegarConfig} from "../routes/index"
     }
 
     .fimMenu{
-        margin-top: 450px;
+        margin-top: auto;
+        margin-bottom: 40px;
         color: var(--branco);
         font-weight: 600;
     }
