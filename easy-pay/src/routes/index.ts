@@ -19,3 +19,7 @@ export function navegarEmprestimos(){
 export function navegarCartoes(){
     return router.push("/cartoes")
 }
+
+export function navegarConfig(){
+    return router.push("/config")
+}

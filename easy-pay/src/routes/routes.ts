@@ -4,6 +4,7 @@ import Pagamentos from "../views/Pagamentos.vue"
 import Cartoes from "../views/Cartoes.vue"
 import Emprestimos from "../views/Emprestimos.vue"
 import Pix from "../views/Pix.vue"
+import Configuracao from '@/views/Configuracao.vue'
 
 const routes = [
     {
@@ -30,6 +31,11 @@ const routes = [
         path : '/pix',
         name: 'Pix',
         component: Pix
+    },
+    {
+        path : '/config',
+        name: 'Configuracao',
+        component: Configuracao
     },
 ] 
 

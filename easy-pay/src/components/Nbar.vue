@@ -3,6 +3,8 @@ import { ref } from 'vue';
 import ItemNv from './ItemNv.vue';
 import  { obterItensNv } from '@/store/listaItemNav'
 import { navegarHome } from '@/routes';
+import type IItem from '@/interfaces/iItem';
+import {navegarConfig} from "../routes/index"
     const listItens = obterItensNv()
     const t = ref(true)
 
@@ -12,6 +14,12 @@ import { navegarHome } from '@/routes';
 
     function minimize(){
         t.value = true
+    }
+
+    const configs = {
+        nome : "Configuração",
+        imagem : "white_gear.png",
+        navegar: navegarConfig
     }
 
 </script>
@@ -28,6 +36,9 @@ import { navegarHome } from '@/routes';
                     <ItemNv :item="item" :t="t"/>
                 </li>
             </ul>
+            <footer class="fimMenu">
+                <ItemNv :item="configs" :t="t"/>
+            </footer>
         </aside>
 </template>
 
@@ -48,7 +59,8 @@ import { navegarHome } from '@/routes';
         width: 15em;
         height: 100vh;
         background-color: var(--laranja);
-        transition: 0.2s;
+        transition: 0.1s;
+        padding: 0px 10px;
     }
 
     .navMenu_mini{
@@ -56,13 +68,22 @@ import { navegarHome } from '@/routes';
     }
 
     .imagemMenuLogo{
-        width: 100px;
+        margin: 10px;
+        width: 60px;
         cursor: pointer;
     }
 
     .topoMenu{
+        margin-top: 10px;
         display: flex;
         padding-bottom: 30px;
     }
+
+    .fimMenu{
+        margin-top: 450px;
+        color: var(--branco);
+        font-weight: 600;
+    }
+
 
 </style>

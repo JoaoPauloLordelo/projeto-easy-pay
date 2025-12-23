@@ -18,7 +18,7 @@ export function obterItensNv() : IItem[] {
         imagem : "white_empr.png",
         navegar: navegarEmprestimos
     },
-        {
+    {
         nome : "PIX",
         imagem : "white_pix.png",
         navegar: navegarPix
