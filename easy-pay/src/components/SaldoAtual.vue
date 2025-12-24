@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import formatarValor from "../utils/formatarValor";
 
     const props = defineProps<{
         valor : Number
@@ -14,15 +15,12 @@ import { ref } from 'vue';
 
 <template>
     <section class="exibeSaldo">
-        <h2 class="tituloSaldo">Saldo Atual</h2>
         <div class="quantSaldo">
-            <p class="valor" v-if="exibir">{{valor.toLocaleString('pt-BR',{
-                    style: 'currency',
-                    currency: 'BRL'})}}</p>
-            <p class="valorEscondido"  v-else>R$ ****</p>
-
+            <h2 class="tituloSaldo">Saldo Atual</h2>
             <button @click="mostrarSaldo()" :class="{botaoAtivo: !exibir}"></button>
         </div>
+            <p class="valor" v-if="exibir">{{formatarValor(valor)}}</p>
+            <p class="valorEscondido"  v-else>R$ ****</p>
     </section>
 </template>
 
@@ -46,7 +44,7 @@ import { ref } from 'vue';
         border-radius: 20px;
         cursor: pointer;
         transition: 0.2s;
-        margin: auto;
+        margin: auto 20px;
         position: block;
     }
     .valorEscondido{

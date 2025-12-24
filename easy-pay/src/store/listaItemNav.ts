@@ -1,4 +1,4 @@
-import type IItem from "@/interfaces/iItem"
+import type IItem from "../interfaces/iItem";
 import {navegarPagamentos, navegarHome, navegarCartoes, navegarEmprestimos, navegarPix} from "../routes/index"
 
 export function obterItensNv() : IItem[] {
