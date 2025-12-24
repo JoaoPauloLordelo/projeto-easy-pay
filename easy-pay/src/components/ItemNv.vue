@@ -29,9 +29,10 @@
         flex-direction: row;
         gap: 10px;
         cursor: pointer;
-        padding: 10px 0;
+        padding: 10px 20px;
         border-radius: 5px;
         height: 1.90em;
+        
     }
 
     .itemMenu:hover{
@@ -41,7 +42,6 @@
 
     #itemImg{
         width: 30px;
-        margin-left: 25%;
     }
 
     .itemName{
