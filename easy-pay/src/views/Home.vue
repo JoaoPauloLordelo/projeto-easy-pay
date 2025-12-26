@@ -3,22 +3,19 @@ import {obterAcoesHome} from "../store/listaAcoesHome";
 import SaldoAtual from '@/components/SaldoAtual.vue';
 import type IItem from "../interfaces/iItem";
 import AcaoHome from "@/components/AcaoHome.vue";
+import UltimasTransacoes from "@/components/UltimasTransacoes.vue";
 
 
-const lista : IItem[] = obterAcoesHome();
-const nome = "Usuário"
+const nome = "Layanne"
 
 </script>
 
 <template>
     <main>
-        <h1 class="textoCinza">Olá <span class="textoLaranja">{{ nome }}</span></h1>
+        <h1 class="textoCinza boasVindas">Olá <span class="textoLaranja">{{ nome }}</span></h1>
         <SaldoAtual :valor="1000.228"/>
-        <ul>
-            <li v-for="item in lista">
-                <AcaoHome :item="item"/>
-            </li>
-        </ul>
+        <AcaoHome />
+        <UltimasTransacoes/>
         
     </main>
 
@@ -28,10 +25,13 @@ const nome = "Usuário"
     main{
         padding: 50px;
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        
     }
 
-    ul{
-        list-style-type: none;
-        padding: 0;
+    .boasVindas{
+        margin: 20px 0px 0px 0px;
     }
 </style>

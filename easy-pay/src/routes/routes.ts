@@ -5,6 +5,8 @@ import Cartoes from "../views/Cartoes.vue"
 import Emprestimos from "../views/Emprestimos.vue"
 import Pix from "../views/Pix.vue"
 import Configuracao from '@/views/Configuracao.vue'
+import { patchProp } from 'vue'
+import Investimentos from '@/views/Investimentos.vue'
 
 const routes = [
     {
@@ -37,6 +39,11 @@ const routes = [
         name: 'Configuracao',
         component: Configuracao
     },
+    {
+        path: '/investimentos',
+        name: 'Investimentos',
+        component: Investimentos
+    }
 ] 
 
 const router = createRouter({

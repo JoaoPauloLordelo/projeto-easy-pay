@@ -1,25 +1,34 @@
 <script setup lang="ts">
 import type IItem from '@/interfaces/iItem';
+import { obterAcoesHome } from '@/store/listaAcoesHome';
+import { ref } from 'vue';
 
+const itens = ref<IItem[]>(obterAcoesHome());
 
+function mudarImagem(item : IItem){
+    item.imagem = item.imagem.replace("gray","white")
+}
 
-const props = defineProps<{
-    item : IItem
-}>()
+function reverterImagem(item : IItem){
+    item.imagem = item.imagem.replace("white", "gray")
+}
+
 </script>
 
 <template>
     <section class="grupoAcoes">
-        <button class="acaoBotao">
-            <img src="" alt="">
-            <span>{{ item.nome }}</span>
+        <button class="acaoBotao" v-for="item in itens" :key="item.nome" @mouseenter="mudarImagem(item)" @mouseleave="reverterImagem(item)">
+            <img :src="`/icons/acoesHome/${item.imagem}`" alt="" class="imgAcao">
+            <span class="nomeAcao">{{ item.nome }}</span>
         </button>
     </section>
 </template>
 
 <style scoped>
     .grupoAcoes{
-        display: flex;
+        display:flex;
+        flex-direction: row;
+        gap: 20px;
     }
 
     .acaoBotao{
@@ -30,16 +39,25 @@ const props = defineProps<{
         color: var(--cinza-escuro);
         font-weight: 600;
         border-radius: 10px;
-        transition: 0.1s;
+        transition: 0.2s ease-out;
         cursor: pointer;
+        gap: 10px;
+        width: 100px;
     }
 
     .acaoBotao:hover{
         border-color: var(--laranja);
-        padding: 14px;
-        border: 2px solid;
-        color: var(--laranja);
+        background-color: var(--laranja);
+        color: white;
         
+    }
+
+    .imgAcao{
+        width: 30px;
+    }
+
+    .nomeAcao{
+        margin: auto 0;
     }
 
     

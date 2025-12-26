@@ -1,23 +1,9 @@
 <script setup lang="ts">
-  import Nbar from './components/Nbar.vue';
-import PerfilPic from './components/PerfilPic.vue';
+import Principal from './views/Principal.vue';
 </script>
 
 <template>
-  <main class="main">
-    <Nbar/>
-    <router-view/>
-    <PerfilPic/>
-  </main>
+  <Principal/>
 </template>
 
-<style scoped>
-  *{
-    margin: 0;
-  }
-
-  .main{
-    display: flex;
-    flex-direction: row;
-  }
-</style>
+<style></style>

@@ -56,6 +56,7 @@ import {navegarConfig} from "../routes/index"
     }
 
     .navMenu{
+        position: fixed;
         width: 15em;
         height: 100vh;
         background-color: var(--laranja);

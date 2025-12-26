@@ -23,3 +23,7 @@ export function navegarCartoes(){
 export function navegarConfig(){
     return router.push("/config")
 }
+
+export function navegarInvestimentos(){
+    return router.push("/investimentos")
+}
