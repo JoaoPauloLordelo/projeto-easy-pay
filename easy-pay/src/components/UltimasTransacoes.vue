@@ -1,19 +1,15 @@
 <script setup lang="ts">
-    const valid = true
+    const valid = true;
+
+    const topicosTable = ["ID Transação","Valor","Responsável","Tipo","Data","Horário","Comprovante"];
 </script>
 
 <template>
-    <section class="tableTransacao">
-        <table>
+    <section class="listaTransacao">
+        <table class="tableTransacao">
             <thead class="headTransacao">
                 <tr>
-                    <th>ID Transação</th>
-                    <th>Valor</th>
-                    <th>Responsável</th>
-                    <th>Tipo</th>
-                    <th>Data</th>
-                    <th>Horário</th>
-                    <th>Comprovante</th>
+                    <th v-for="top in topicosTable">{{ top }}</th>
                 </tr>
             </thead>
             <tbody v-if="!valid" class="corpoTransacao">
@@ -25,21 +21,20 @@
 </template>
 
 <style scoped>
+    .tableTransacao{
+        width: 100%;
+        table-layout: fixed;
+        border-collapse: collapse;
+    }
     .headTransacao{
         background-color: var(--cinza-mais-claro);  
-        display: flex;
-        padding: 20px;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
+        border-radius: 10px;
     }
 
-    .headTransacao > tr{
-        display: flex;
-        gap: 20px;
-    }
     th{
         font-weight: 400;
         font-size: 15px;
+        padding: 20px;
     }
 
     .corpoTransacao{
