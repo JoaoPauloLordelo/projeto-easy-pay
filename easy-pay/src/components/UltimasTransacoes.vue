@@ -37,7 +37,10 @@ import RegistroTransacao from "./RegistroTransacao.vue";
 <style scoped>
     .listaTransacao{
         border-radius: 12px;
-        overflow: hidden;
+        overflow-x: auto;
+        padding: 10px;
+        background-color: var(--cinza-mais-claro);
+        min-width: 600px;
         
     }
 
@@ -66,5 +69,6 @@ import RegistroTransacao from "./RegistroTransacao.vue";
 
     .corpoTransacao{
         background-color: var(--cinza-mais-claro);
+        overflow-y: scroll;
     }
 </style>

@@ -15,7 +15,7 @@ import PerfilPic from '../components/PerfilPic.vue';
   *{
     margin: 0;
   }
-  
+
   .roteador{
   }
 
@@ -24,3 +24,4 @@ import PerfilPic from '../components/PerfilPic.vue';
     flex-direction: row;
   }
 </style>
+

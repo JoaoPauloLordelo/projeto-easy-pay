@@ -20,6 +20,14 @@ export const listaTransacoes = defineStore('lista',{
                 data : "11/10/2005",
                 horario : "14:00"
         },
+                {
+                id : 3,
+                valor: 30,
+                responsavel: "joao",
+                tipo : "PIX",
+                data : "12/10/2005",
+                horario : "04:00"
+        }
 
     ] as ITransacao[]
     }),
