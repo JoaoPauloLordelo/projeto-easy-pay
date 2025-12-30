@@ -17,7 +17,6 @@ import PerfilPic from '../components/PerfilPic.vue';
   }
   
   .roteador{
-    margin-left: 100px;
   }
 
   .main{

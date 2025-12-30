@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import formatarValor from "../utils/formatarValor";
 
     const props = defineProps<{
-        valor : Number
+        valor : number
     }>()
 
     const exibir = ref(true);

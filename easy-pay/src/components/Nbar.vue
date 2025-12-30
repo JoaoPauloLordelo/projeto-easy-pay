@@ -53,10 +53,10 @@ import {navegarConfig} from "../routes/index"
         color: var(--branco);
         font-weight: 600;
         gap: 20px;
+        
     }
 
     .navMenu{
-        position: fixed;
         width: 15em;
         height: 100vh;
         background-color: var(--laranja);

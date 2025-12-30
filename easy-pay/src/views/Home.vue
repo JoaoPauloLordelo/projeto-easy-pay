@@ -13,7 +13,7 @@ const nome = "Layanne"
 <template>
     <main>
         <h1 class="textoCinza boasVindas">Olá <span class="textoLaranja">{{ nome }}</span></h1>
-        <SaldoAtual :valor="1000.228"/>
+        <SaldoAtual :valor="10030.228"/>
         <AcaoHome />
         <UltimasTransacoes/>
         

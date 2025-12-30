@@ -1,7 +1,15 @@
 <script setup lang="ts">
-    const valid = true;
+import { computed } from "vue";
+import { listaTransacoes } from "../store/listaTransacoesStore";
+import RegistroTransacao from "./RegistroTransacao.vue";
+
 
     const topicosTable = ["ID Transação","Valor","Responsável","Tipo","Data","Horário","Comprovante"];
+
+    const transacoes = listaTransacoes();
+
+    const valid = computed(() => transacoes.isEmpty());
+    
 </script>
 
 <template>
@@ -13,22 +21,41 @@
                 </tr>
             </thead>
             <tbody v-if="!valid" class="corpoTransacao">
-                asdasdasd
+                <RegistroTransacao v-for="item in transacoes.transacoes" :transacao="item"/>
             </tbody>
-            <tbody v-else class="corpoTransacao">baaaa</tbody>
+            <tbody v-else class="corpoTransacao">
+                   <tr>
+                        <td :colspan="topicosTable.length" class="semTransacao">
+                            Não há Nenhuma transação
+                        </td>
+                   </tr>
+            </tbody>
         </table>
     </section>
 </template>
 
 <style scoped>
+    .listaTransacao{
+        border-radius: 12px;
+        overflow: hidden;
+        
+    }
+
+    .semTransacao{
+        color: var(--cinza-escuro);
+        font-weight: bold;
+        font-size: 20px;
+        text-align: center;
+        padding: 20px;
+    }
     .tableTransacao{
+        border-spacing: 10px;
         width: 100%;
         table-layout: fixed;
         border-collapse: collapse;
     }
     .headTransacao{
         background-color: var(--cinza-mais-claro);  
-        border-radius: 10px;
     }
 
     th{
@@ -38,5 +65,6 @@
     }
 
     .corpoTransacao{
+        background-color: var(--cinza-mais-claro);
     }
 </style>

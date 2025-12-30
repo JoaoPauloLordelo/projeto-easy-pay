@@ -1,4 +1,4 @@
-export default function formatarValor(valor : Number){
+export default function formatarValor(valor : number){
     return valor.toLocaleString("pt-br",{
         style : "currency",
         currency : "BRL"
