@@ -4,6 +4,7 @@ import SaldoAtual from '@/components/SaldoAtual.vue';
 import type IItem from "../interfaces/iItem";
 import AcaoHome from "@/components/AcaoHome.vue";
 import UltimasTransacoes from "@/components/UltimasTransacoes.vue";
+import GraficoSaldo from "@/components/GraficoSaldo.vue";
 
 
 const nome = "Layanne"
@@ -13,8 +14,14 @@ const nome = "Layanne"
 <template>
     <main>
         <h1 class="textoCinza boasVindas">Olá <span class="textoLaranja">{{ nome }}</span></h1>
-        <SaldoAtual :valor="10030.228"/>
-        <AcaoHome />
+        <section class="exibirDados">
+            <div class="acaoSaldo">
+                <SaldoAtual :valor="10030.228"/>
+                <AcaoHome />
+            </div>
+                <GraficoSaldo/>
+            
+        </section>
         <UltimasTransacoes/>
         
     </main>
@@ -22,6 +29,16 @@ const nome = "Layanne"
 </template>
 
 <style scoped>
+    .exibirDados{
+        display: flex;
+        gap: 30px;
+        width: 100%;
+    }
+    .acaoSaldo{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
     main{
         padding: 50px;
         width: 100%;

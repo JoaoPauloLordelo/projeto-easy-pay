@@ -25,7 +25,7 @@ import { ref } from 'vue';
                 <span v-for="value in transacao" class="valor" :key="value">{{value}}</span>
                 
                 <button class="comprovanteButton" @mouseenter="mudarImagem()" @mouseleave="reverterImagem()">
-                    <img :src="`../../public/icons/${imagem}`" alt="" class="imgBaixar valor">
+                    <img :src="`../../public/icons/${imagem}`" alt="" class="imgBaixar">
                 </button>
             </div>
         </td>
@@ -52,6 +52,9 @@ import { ref } from 'vue';
 
     .valor{
         margin: auto;
+        margin-left: 0;
+        width: 4em;
+        text-align: center;
     }
 
     .imgBaixar{

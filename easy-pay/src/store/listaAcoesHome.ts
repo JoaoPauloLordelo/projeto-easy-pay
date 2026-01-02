@@ -17,6 +17,11 @@ export function obterAcoesHome(){
             nome: "PIX",
             imagem: "gray_pix.png",
             navegar : navegarPix
+        },
+                {
+            nome: "Crédito",
+            imagem: "gray_pix.png",
+            navegar : navegarPix
         }
     ]
 

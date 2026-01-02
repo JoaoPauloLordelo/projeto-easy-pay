@@ -55,7 +55,6 @@ import formatarValor from "../utils/formatarValor";
     }
     .exibeSaldo{
         border: 1px solid;
-        padding: 10px;
         border-color: var(--cinza-mais-claro);
         border-radius: 10px;
         padding: 20px;

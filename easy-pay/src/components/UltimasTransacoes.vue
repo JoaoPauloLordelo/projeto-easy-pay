@@ -37,10 +37,11 @@ import RegistroTransacao from "./RegistroTransacao.vue";
 <style scoped>
     .listaTransacao{
         border-radius: 12px;
-        overflow-x: auto;
+        
         padding: 10px;
         background-color: var(--cinza-mais-claro);
-        min-width: 600px;
+        /* min-width: 600px;
+        max-height: 60vh; */
         
     }
 
@@ -62,13 +63,13 @@ import RegistroTransacao from "./RegistroTransacao.vue";
     }
 
     th{
-        font-weight: 400;
+        font-weight: 500;
         font-size: 15px;
-        padding: 20px;
+        padding: 20px 20px 30px 20px;
+        border-bottom: 1px solid var(--cinza-claro);
     }
 
     .corpoTransacao{
         background-color: var(--cinza-mais-claro);
-        overflow-y: scroll;
     }
 </style>

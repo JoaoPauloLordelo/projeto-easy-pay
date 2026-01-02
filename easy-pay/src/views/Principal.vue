@@ -17,11 +17,13 @@ import PerfilPic from '../components/PerfilPic.vue';
   }
 
   .roteador{
+    overflow-y: auto; /* scroll só aqui */
   }
 
   .main{
     display: flex;
-    flex-direction: row;
+    height: 100vh;
+    overflow: hidden;
   }
 </style>
 
