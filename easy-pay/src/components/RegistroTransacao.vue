@@ -71,9 +71,6 @@ import { ref } from 'vue';
     }
 
     .comprovanteButton:hover{
-        padding: 2px 7px;
         background-color: var(--laranja);
-        border-color: var(--laranja);
-        margin: -1px ;
     }
 </style>

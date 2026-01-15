@@ -17,6 +17,7 @@ import PerfilPic from '../components/PerfilPic.vue';
   }
 
   .roteador{
+    flex: 1;
     overflow-y: auto; /* scroll só aqui */
   }
 
