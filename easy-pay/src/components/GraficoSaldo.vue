@@ -69,7 +69,7 @@ const componenteGrafico = computed(() => {
   <section class="areaGrafico">
     
     <div class="grafico">
-      //PENSAR SE VOU USAR V-IF OU NAO NESSE GRAFICO
+      <!-- //PENSAR SE VOU USAR V-IF OU NAO NESSE GRAFICO -->
       <component :is="componenteGrafico" :data="chartData" :options="chartOptions"/>
     </div>
     <div class="defineGrafico">
