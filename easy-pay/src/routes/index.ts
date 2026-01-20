@@ -1,7 +1,7 @@
 import router from './routes';
 
 export function navegarHome(){
-    return router.push("/")
+    return router.push("/home")
 }
 
 export function navegarPagamentos(){
@@ -26,4 +26,16 @@ export function navegarConfig(){
 
 export function navegarInvestimentos(){
     return router.push("/investimentos")
+}
+
+export function navegarLogin(){
+    return router.push("/login")
+}
+
+export function navegarCadastro(){
+    return router.push("/cadastro")
+}
+
+export function navegarResetSenha(){
+    return router.push("/resetsenha")
 }
