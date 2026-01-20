@@ -12,6 +12,7 @@ const nome = "Layanne"
 </script>
 
 <template>
+    
     <main>
         <h1 class="textoCinza boasVindas">Olá <span class="textoLaranja">{{ nome }}</span></h1>
         <section class="exibirDados">
