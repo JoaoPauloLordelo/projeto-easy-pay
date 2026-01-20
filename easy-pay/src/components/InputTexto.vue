@@ -27,8 +27,7 @@ import {validar, type campoPossivel} from "../utils/validacoes"
     }
 
     const textoErro = ref("")
-
-    function validarString(){
+    function validarString(){  
         const resultado = validar(txtDigitado.value,props.validacao)
         if (resultado != undefined){
             textoErro.value = resultado;
@@ -42,10 +41,10 @@ import {validar, type campoPossivel} from "../utils/validacoes"
 <template>
     <div>
         <label for="texto" v-if="label" class="labelInput">{{ label }}</label>
-        <div class="digitar">
+        <div class="digitar" :class="{erroIdentificado : textoErro}">
             <input  :type="tipo" id="texto" :placeholder="placeholder" 
             v-model="txtDigitado" @input="emit('update:modelValue', txtDigitado)" @blur="validarString()">
-            <button type="button" v-if="esconder" @mousedown="revelarSenha" @mouseup="esconderSenha"></button>
+            <button type="button" v-if="esconder" @mousedown="revelarSenha" @mouseup="esconderSenha" @mouseleave="esconderSenha"></button>
         </div>
         <span v-if="textoErro" class="textoDeErro">{{textoErro}}</span>
     </div>
@@ -84,10 +83,13 @@ import {validar, type campoPossivel} from "../utils/validacoes"
     }
 
     .textoDeErro{
-        margin: 0;
+        margin-top: 5px;
         color: red;
         font-size: 12px;
-        margin-top: -10px;
+    }
+
+    .erroIdentificado{
+        border: 1px solid red;
     }
 
     

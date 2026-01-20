@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import InputTexto from './InputTexto.vue';
 import BotaoMedio from './BotaoMedio.vue';
 import {navegarCadastro,  navegarLogin } from '@/routes';
@@ -14,15 +14,10 @@ function exibir(){
     navegarLogin()
 }
 
-const erroSenhaNova = ref(false)
+const erroSenhaNova = computed(()=>{
+   return  senhaNova.value != senhaConfirm.value ?  true : false;
+})
 
-function validarSenha(){
-    if (senhaNova.value.length < 8){
-        return erroSenhaNova.value = true;
-    }
-
-    return erroSenhaNova.value = false;
-}
 
 </script>
 
@@ -36,6 +31,7 @@ function validarSenha(){
             label="Senha Nova" :txt-digitado="senhaNova"/>
             <InputTexto v-model="senhaConfirm" type="password" placeholder="Digitar Senha Nova" 
             label="Confirmar Senha" :txt-digitado="senhaConfirm"/>
+            <span v-if="erroSenhaNova" class="textoDeErro">As senhas não estão iguais</span>
             <BotaoMedio name="Enviar" type="submit"/>
 
             <div class="cadastroSenha">
@@ -89,5 +85,10 @@ function validarSenha(){
         color: red;
         font-size: 12px;
         margin-top: -10px;
+    }
+    .textoDeErro{
+        margin-top: -10px;
+        color: red;
+        font-size: 12px;
     }
 </style>
