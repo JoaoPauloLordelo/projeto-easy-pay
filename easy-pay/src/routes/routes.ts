@@ -7,10 +7,13 @@ import Pix from "../views/Pix.vue"
 import Configuracao from '@/views/Configuracao.vue'
 import { patchProp } from 'vue'
 import Investimentos from '@/views/Investimentos.vue'
+import Login from '@/views/Login.vue'
+import Cadastro from '@/views/Cadastro.vue'
+import EsqueciSenha from '@/views/EsqueciSenha.vue'
 
 const routes = [
     {
-        path : '/',
+        path : '/home',
         name: 'Home',
         component: Home
     },
@@ -43,6 +46,21 @@ const routes = [
         path: '/investimentos',
         name: 'Investimentos',
         component: Investimentos
+    },
+    {
+        path: '/login',
+        name: 'Login',
+        component: Login
+    },
+    {
+        path: '/cadastro',
+        name: 'Cadastro',
+        component: Cadastro
+    },
+    {
+        path: '/resetsenha',
+        name : 'ResetSenha',
+        component: EsqueciSenha
     }
 ] 
 
