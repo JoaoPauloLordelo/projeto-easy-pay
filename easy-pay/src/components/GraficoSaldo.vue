@@ -97,8 +97,10 @@ const componenteGrafico = computed(() => {
     }
 
     .grafico{
-      width: 350px;
-      height: 200px;
+      /* width: 350px; */
+      width: 80%;
+      /* height: 200px; */
+      height: 90%;
       margin: auto;
 
     }
