@@ -35,4 +35,5 @@ coverage
 # Vitest
 __screenshots__/
 .vscode
-/src/componentesDesabilitados
+frontend/src/componentesDesabilitados
+.env
