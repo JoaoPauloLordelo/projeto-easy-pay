@@ -25,6 +25,7 @@ import type { ButtonHTMLAttributes } from 'vue';
         cursor: pointer;
         transition: 0.2s;
         font-weight: 600;
+        width: 100%;
     }
 
     .botaoMedio:hover{

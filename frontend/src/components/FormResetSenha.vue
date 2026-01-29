@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue';
+import { ref } from 'vue';
 import InputTexto from './InputTexto.vue';
 import BotaoMedio from './BotaoMedio.vue';
 import {navegarCadastro,  navegarLogin } from '@/routes';
@@ -14,10 +14,15 @@ function exibir(){
     navegarLogin()
 }
 
-const erroSenhaNova = computed(()=>{
-   return  senhaNova.value != senhaConfirm.value ?  true : false;
-})
+const erroSenhaNova = ref(false)
 
+function validarSenha(){
+    if (senhaNova.value.length < 8){
+        return erroSenhaNova.value = true;
+    }
+
+    return erroSenhaNova.value = false;
+}
 
 </script>
 
@@ -25,17 +30,17 @@ const erroSenhaNova = computed(()=>{
         <form class="formularioLogin" @submit.prevent="exibir">
             <img src="../assets/images/easy_pay_icon_orange.png" alt="" class="logoImage">
             
-            <InputTexto v-model="senhaAntiga" type="password" placeholder="Digitar Senha Antiga" 
-            label="Senha Antiga" :txt-digitado="senhaAntiga"/>
-            <InputTexto v-model="senhaNova" type="password" placeholder="Digitar Senha Nova" 
-            label="Senha Nova" :txt-digitado="senhaNova"/>
-            <InputTexto v-model="senhaConfirm" type="password" placeholder="Digitar Senha Nova" 
-            label="Confirmar Senha" :txt-digitado="senhaConfirm"/>
-            <span v-if="erroSenhaNova" class="textoDeErro">As senhas não estão iguais</span>
-            <BotaoMedio name="Enviar" type="submit"/>
-
-            <div class="cadastroSenha">
-                <p class="funcaoSecundaria" @click="navegarCadastro()">Não tem uma conta? Cadastre-se</p>
+            <div class="interacao">
+                <InputTexto v-model="senhaAntiga" type="password" placeholder="Digitar Senha Antiga"
+                label="Senha Antiga" :txt-digitado="senhaAntiga"/>
+                <InputTexto v-model="senhaNova" type="password" placeholder="Digitar Senha Nova"
+                label="Senha Nova" :txt-digitado="senhaNova"/>
+                <InputTexto v-model="senhaConfirm" type="password" placeholder="Digitar Senha Nova"
+                label="Confirmar Senha" :txt-digitado="senhaConfirm"/>
+                <BotaoMedio name="Enviar" type="submit"/>
+                <div class="cadastroSenha">
+                    <p class="funcaoSecundaria" @click="navegarCadastro()">Não tem uma conta? Cadastre-se</p>
+                </div>
             </div>
         </form>
 </template>
@@ -60,8 +65,7 @@ const erroSenhaNova = computed(()=>{
         width: 50px;
         margin: auto;
         margin-top: 0;
-        padding-bottom: 50px;
-        margin-bottom: 20%;
+        margin-bottom: 0;
     }
 
     .cadastroSenha{
@@ -80,15 +84,12 @@ const erroSenhaNova = computed(()=>{
         color: var(--laranja);
     }
 
-    .avisoSenha{
-        margin: 0;
-        color: red;
-        font-size: 12px;
-        margin-top: -10px;
+    .interacao{
+        margin: auto 0 ;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
-    .textoDeErro{
-        margin-top: -10px;
-        color: red;
-        font-size: 12px;
-    }
+
 </style>
