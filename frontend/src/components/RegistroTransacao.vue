@@ -5,11 +5,11 @@ import { ref } from 'vue';
     const imagem = ref("gray_download.png");
 
     function mudarImagem(){
-        imagem.value = imagem.value.replace("gray","white")
+        imagem.value = imagem.value.replace("gray","orange")
     }
 
     function reverterImagem(){
-        imagem.value = imagem.value.replace("white", "gray")
+        imagem.value = imagem.value.replace("orange", "gray")
     }
 
     const props = defineProps<{
@@ -36,7 +36,7 @@ import { ref } from 'vue';
     .transacaoLinha{
         display: flex;
         justify-content: space-between;
-        background-color: var(--cinza);
+        background-color: var(--cinza-mais-claro);
         margin: 20px;
         padding: 20px;
         border-radius: 10px;
@@ -46,7 +46,7 @@ import { ref } from 'vue';
     }
 
     .transacaoLinha:hover{
-        box-shadow: 1px 1px 4px gray;
+        box-shadow: 1px 1px 4px var(--cinza);
 
     }
 
@@ -65,12 +65,13 @@ import { ref } from 'vue';
         background-color: var(--cinza-mais-claro);
         border:0;
         border-radius: 4px;
-        width: 5em;
+        width: 3em;
+        margin: 0 1em;
         transition: 0.2s;
         cursor: pointer;
     }
 
     .comprovanteButton:hover{
-        background-color: var(--laranja);
+        background-color: var(--cor-de-fundo);
     }
 </style>
