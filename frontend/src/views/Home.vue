@@ -41,7 +41,6 @@ const nome = "Layanne"
         gap: 30px;
     }
     main{
-        padding: 50px;
         width: 100%;
         display: flex;
         flex-direction: column;

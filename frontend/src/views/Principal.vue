@@ -29,6 +29,7 @@ const estaLoginCadastro = computed(() =>{
   .roteador{
     flex: 1;
     overflow-y: auto;
+    padding: 50px;
   }
 
   .main{
