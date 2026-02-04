@@ -1,9 +1,12 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import SearchBar from '@/components/SearchBar.vue';
+
+</script>
 
 <template>
-
-    <h1>PAGAMENTOS</h1>
-
+    <main>
+        <SearchBar/>
+    </main>
 </template>
 
 <style scoped></style>
