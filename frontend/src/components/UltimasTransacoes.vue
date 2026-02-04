@@ -37,9 +37,10 @@ import RegistroTransacao from "./RegistroTransacao.vue";
 <style scoped>
     .listaTransacao{
         border-radius: 12px;
+        border: 1px solid var(--cinza-mais-claro);
         
         padding: 10px;
-        background-color: var(--cinza-mais-claro);
+        background-color: var( --cor-de-fundo);
         /* min-width: 600px;
         max-height: 60vh; */
         
@@ -59,17 +60,18 @@ import RegistroTransacao from "./RegistroTransacao.vue";
         border-collapse: collapse;
     }
     .headTransacao{
-        background-color: var(--cinza-mais-claro);  
+        background-color: var( --cor-de-fundo);  
     }
 
     th{
         font-weight: 500;
-        font-size: 15px;
-        padding: 20px 20px 30px 20px;
-        border-bottom: 1px solid var(--cinza-claro);
+        font-size: 16px;
+        padding: 20px;
+        color: var(--cinza-escuro);
+        /* border-bottom: 1px solid var(--cinza-claro); */
     }
 
     .corpoTransacao{
-        background-color: var(--cinza-mais-claro);
+        background-color: var( --cor-de-fundo);
     }
 </style>
